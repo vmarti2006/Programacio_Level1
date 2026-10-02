@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Girad/Girad.csproj" />
+  <Project Path="Girad_test/Girad_test.csproj" />
+</Solution>
