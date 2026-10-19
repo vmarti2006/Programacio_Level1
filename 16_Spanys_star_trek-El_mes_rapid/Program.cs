@@ -15,36 +15,49 @@ class Program
 ];
         int[] hores =[12,8,11,13,9];
         int[] minuts = [45,32,87,21,76];
-        int mes_rapit=0;
 
-        var resultat = QuiEsELMesRapid(naus,minuts,hores,mes_rapit);
+        var resultat = QuiEsELMesRapid(naus,minuts,hores);
+        
+        Console.WriteLine(resultat);
     }
 
-    public static object QuiEsELMesRapid(string[] naus,int[] minuts, int[] hores, int mes_rapit)
+    public static string QuiEsELMesRapid(string[] naus, int[] minuts, int[] hores)
     {
-        mes_rapit=hores[0];
-        int minut_mes_rapit=minuts[0];
+        // Convertimos el tiempo de la primera nave a minutos totales para comparar fácilmente
+        int tempsMinim = (hores[0] * 60) + minuts[0];
+        string guanyador = naus[0];
+        int horaGuanyador = hores[0];
+        int minutGuanyador = minuts[0];
 
-        string va_guañant=naus[0];
+        bool hiHaEmpat = false;
+        string nauEmpatada = "";
 
-        for (int i=1; i<hores.Length;i++)
+        for (int i = 1; i < naus.Length; i++)
         {
-            if(mes_rapit>hores[i]){
-                mes_rapit=hores[i];
-                minut_mes_rapit=minuts[i];
-                va_guañant=naus[i];
-            }
-            else if (mes_rapit == hores[i])
+            int tempsActual = (hores[i] * 60) + minuts[i];
+
+            if (tempsActual < tempsMinim)
             {
-                if (minuts[i] < minut_mes_rapit)
-                {
-                    minut_mes_rapit=minuts[i];
-                    va_guañant=naus[i];
-                }
+                // Encontramos un tiempo más rápido: actualizamos la nave ganadora
+                tempsMinim = tempsActual;
+                guanyador = naus[i];
+                horaGuanyador = hores[i];
+                minutGuanyador = minuts[i];
+                hiHaEmpat = false; // Se rompe cualquier empate previo
             }
-            else if (minut_mes_rapit==minuts[i] && hores[i]==mes_rapit&&minuts.Length-1==i)
-            {return $"Ha agut un empat enter {va_guañant} i {naus[i]}, han acabat en {mes_rapit} hores i {minut_mes_rapit} minuts ";}
+            else if (tempsActual == tempsMinim)
+            {
+                // Detectamos empate
+                hiHaEmpat = true;
+                nauEmpatada = naus[i];
+            }
         }
-        return $"La cursa l'ha guanyat la nau {va_guañant} amb {mes_rapit} hores i {minut_mes_rapit} minuts";
+
+        if (hiHaEmpat)
+        {
+            return $"Hi ha hagut un empat entre {guanyador} i {nauEmpatada}, han acabat en {horaGuanyador} hores i {minutGuanyador} minuts.";
+        }
+
+        return $"La cursa l'ha guanyat la nau {guanyador} amb {horaGuanyador} hores i {minutGuanyador} minuts.";
     }
 }
