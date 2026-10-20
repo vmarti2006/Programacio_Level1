@@ -21,9 +21,8 @@ class Program
 
         for (int i=0;i<ADN.Length;i++)
         {
-        while(ADN[i]<ADN[anterior]){hostias++;}
-        
-        anterior=ADN[i];
+        if(ADN[i]<anterior){hostias=anterior-ADN[i];}
+        else anterior=ADN[i];
         }
         return hostias;
     }
