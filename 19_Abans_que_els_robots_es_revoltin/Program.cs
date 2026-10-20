@@ -11,7 +11,8 @@ class Program
 
         var resultat = QuinRobotViu(robots,comtador);
 
-        Console.WriteLine($"El robot que sobreviu és: {resultat}");    }
+        Console.WriteLine($"El robot que sobreviu és: {resultat}");
+    }
 
    public static string QuinRobotViu(List<string> robots, int[] comptador)
     {
