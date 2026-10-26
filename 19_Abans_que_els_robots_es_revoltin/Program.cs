@@ -7,7 +7,7 @@ class Program
     static void Main(string[] args)
     {
         List<string> robots = ["Roomba","Thermomix","Cafetera","Microones"];
-        int[] comtador= [5, 2, 3];
+        int[] comtador= [2,2,2];
 
         var resultat = QuinRobotViu(robots,comtador);
 
@@ -36,4 +36,3 @@ class Program
         return robots[0];
     }
 }
-
