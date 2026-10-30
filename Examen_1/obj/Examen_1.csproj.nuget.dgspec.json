@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\Examen_1.csproj": {}
+    "C:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\Examen_1.csproj": {}
   },
   "projects": {
-    "c:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\Examen_1.csproj": {
+    "C:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\Examen_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\Examen_1.csproj",
+        "projectUniqueName": "C:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\Examen_1.csproj",
         "projectName": "Examen_1",
-        "projectPath": "c:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\Examen_1.csproj",
+        "projectPath": "C:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\Examen_1.csproj",
         "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\obj\\",
+        "outputPath": "C:\\Users\\victo\\Documents\\DAW1_2\\Programacio\\Programacio_Level1\\Examen_1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config"

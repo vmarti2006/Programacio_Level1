@@ -27,11 +27,14 @@ class Program
 
     private static int QuinEsElMesPetitDeLaColumna(int columna, List<List<int>> puntuacios)
     {
-        throw new NotImplementedException();
+        int gran=-1;
+        if(){}
+        return gran;
     }
 
     private static int QuinEsElMesGranDeLaColumna(int columna, List<List<int>> puntuacios)
     {
-        throw new NotImplementedException();
+       int petit=-1;
+        return petit;
     }
 }
