@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("23_Pistolero")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40dbcad325c2263f5ea732de95f7f7d54ac8973c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+471c576e03a9688a70d534b51c2c574db0e08042")]
 [assembly: System.Reflection.AssemblyProductAttribute("23_Pistolero")]
 [assembly: System.Reflection.AssemblyTitleAttribute("23_Pistolero")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
