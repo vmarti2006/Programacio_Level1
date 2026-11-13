@@ -1,57 +1,48 @@
-﻿namespace _32_PirataTramunt;
+﻿using System.Runtime.Serialization.Formatters;
+
+namespace _32_PirataTramunt;
 
 class Program
 {
     public struct Barco
     {
-        public string pais { get; set; }
-        public int[] encriptat { get; set; }
-        public int numero_secret { get; set; }
+        public string Pais { get; set; }
+        public string distancia { get; set; }
     }
     static void Main(string[] args)
     {
         Barco[] flotas = [
-            new Barco{pais="Francès",encriptat=[6,6,6,6,6,6,3,3,3,3,4,4,4,4],numero_secret=-1}, // espera 64 
-            new Barco{pais="Anglès",encriptat=[3,4,3,3,3,5,3,3,3],numero_secret=-1}, // espera 33
-            new Barco{pais="Espanyol",encriptat=[1,9,9,9,9,9,9,9,9,9,3,3,3,3,4,4,4,4,1,1],numero_secret=-1} // espera 194
+            new() {Pais="Francès",distancia="66666633334444"}, // espera 64 
+            new() {Pais="Anglès",distancia="343335333"}, // espera 33
+            new() {Pais="Espanyol",distancia="19999999993333444411"} // espera 194
         ];
 
-        var resultat = QuinEstaMesLLuny(flotas);
-        Console.WriteLine(resultat);
-    }
-    private static string QuinEstaMesLLuny(Barco[] flotas)
-    {
-        for (int flota = 0; flota < flotas.Length; flota++){ // Me va mirando los barcos 
-
-            Console.WriteLine($"Pais: {flotas[flota].pais}"); // Te dice el pais
-
-            var resultat = MirarLaDistancia(flota, flotas);
-
-            if (resultat==-1){return"Algo esta mal en 'MirarLaDistancia'";} 
-
-            flotas[flota].numero_secret = resultat; // Te cambia el numero secreto por el resultado
-        }
-
-        for (int y = 0; y < flotas.Length; y++){ // Me da los resultados 
-
-            Console.WriteLine($" - un vaixell  {flotas[y].pais} a {flotas[y].numero_secret} nussos");
-        }
-
-        return "";
-    }
-    private static int MirarLaDistancia(int flota, Barco[] flotas)
-    {
-       string resultat= "";
-        for (int quinbusco = 1; quinbusco < 9;quinbusco++)
-        {
-           int repeticions= 0;
-            
-            for (int x = 0; x < flotas[flota].encriptat.Length; x++){ // Me va mirando si es igual el numero al array
-                if(quinbusco==flotas[flota].encriptat[x]){repeticions++;}
+        var distanciamespatita= Int32.MaxValue;
+        var pais = "";
+        foreach(var flota in flotas){
+            var distancia= AquinaDistanciaEstaElBarco(flota);
+            if (distancia < distanciamespatita){
+                distanciamespatita=distancia;
+                pais=flota.Pais;
             }
-            if (repeticions==quinbusco){resultat = resultat + $"{quinbusco}";}
         }
+        Console.WriteLine($"Ataquem el vaixell {pais} que esta a {distanciamespatita}");
+    }
+    static int AquinaDistanciaEstaElBarco(Barco flota)
+    {
+        char quinesticbuscan= flota.distancia[0];
+        var compte = 0;
+        var solucio = "";
         
-        return Convert.ToInt32(resultat);
+        foreach(var digit in flota.distancia){
+            if (digit==quinesticbuscan){compte++;}
+            else{
+                var numeroqueestavabuscan= Convert.ToUInt32($"{quinesticbuscan}");
+                if (numeroqueestavabuscan==compte){solucio +=quinesticbuscan;}
+                quinesticbuscan=digit;
+                compte=1;
+            }
+        }
+        return Convert.ToInt32(solucio);
     }
 }
