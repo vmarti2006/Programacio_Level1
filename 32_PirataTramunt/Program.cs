@@ -34,6 +34,7 @@ class Program
         var compte = 0;
         var solucio = "";
         
+        
         foreach(var digit in flota.distancia){
             if (digit==quinesticbuscan){compte++;}
             else{
@@ -43,6 +44,9 @@ class Program
                 compte=1;
             }
         }
+        
+        var numero= Convert.ToUInt32($"{quinesticbuscan}");
+        if (numero==compte){solucio +=quinesticbuscan;}
         return Convert.ToInt32(solucio);
     }
 }
