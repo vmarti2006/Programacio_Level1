@@ -41,13 +41,17 @@ class Program
     }
     private static int MirarLaDistancia(int flota, Barco[] flotas)
     {
-        int resultat = -1;
-        int repeticions= 0;
-
-        for (int x = 0; x < flotas[flota].encriptat.Length; x++){ // Me va mirando los arrays
+       string resultat= "";
+        for (int quinbusco = 1; quinbusco < 9;quinbusco++)
+        {
+           int repeticions= 0;
             
+            for (int x = 0; x < flotas[flota].encriptat.Length; x++){ // Me va mirando si es igual el numero al array
+                if(quinbusco==flotas[flota].encriptat[x]){repeticions++;}
+            }
+            if (repeticions==quinbusco){resultat = resultat + $"{quinbusco}";}
         }
-
-        return resultat;
+        
+        return Convert.ToInt32(resultat);
     }
 }
