@@ -33,18 +33,18 @@ class Program
         int tempsp=0;
         int tempsg=0;
 
-        Console.WriteLine($"Minut {tempsp} Hi ha una tala petita");
-        Console.WriteLine($"Minut {tempsg} Hi ha una tala gran");
+        Console.WriteLine($"Minut {tempsp} Hi ha una taula petita");
+        Console.WriteLine($"Minut {tempsg} Hi ha una taula gran");
 
 
         for (int x=0;x<listaEspera.Count;x++){
             if (taules[0].cadiras >= listaEspera[x].gent){
                  tempsp=+listaEspera[x].temps;
-                 Console.WriteLine($"Minut {tempsp} Hi ha una tala petita");
+                 Console.WriteLine($"Minut {tempsp} Hi ha una taula petita");
             };
             if (taules[1].cadiras >= listaEspera[x].gent){
                 tempsg=+listaEspera[x].temps;
-                Console.WriteLine($"Minut {tempsg} Hi ha una tala gran");
+                Console.WriteLine($"Minut {tempsg} Hi ha una taula gran");
 
             }
             if (taules[1].cadiras <= listaEspera[x].gent)
