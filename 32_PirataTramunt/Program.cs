@@ -25,7 +25,10 @@ class Program
                 distanciamespatita=distancia;
                 pais=flota.Pais;
             }
+            if (pais=="Espanyol"&& distancia<=100)
+            {Console.WriteLine($"Ataquem el vaixell espanyol a {distancia} nusos"); return;}
         }
+        
         Console.WriteLine($"Ataquem el vaixell {pais} que esta a {distanciamespatita}");
     }
     static int AquinaDistanciaEstaElBarco(Barco flota)
@@ -44,7 +47,7 @@ class Program
                 compte=1;
             }
         }
-        
+
         var numero= Convert.ToUInt32($"{quinesticbuscan}");
         if (numero==compte){solucio +=quinesticbuscan;}
         return Convert.ToInt32(solucio);
