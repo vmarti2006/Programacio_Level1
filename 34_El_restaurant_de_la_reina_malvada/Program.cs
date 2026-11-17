@@ -36,16 +36,14 @@ class Program
         Console.WriteLine($"Minut {tempsp} Hi ha una taula petita");
         Console.WriteLine($"Minut {tempsg} Hi ha una taula gran");
 
-
         for (int x=0;x<listaEspera.Count;x++){
             if (taules[0].cadiras >= listaEspera[x].gent){
-                 tempsp=+listaEspera[x].temps;
+                 tempsp+=listaEspera[x].temps;
                  Console.WriteLine($"Minut {tempsp} Hi ha una taula petita");
             };
             if (taules[1].cadiras >= listaEspera[x].gent){
-                tempsg=+listaEspera[x].temps;
+                tempsg+=listaEspera[x].temps;
                 Console.WriteLine($"Minut {tempsg} Hi ha una taula gran");
-
             }
             if (taules[1].cadiras <= listaEspera[x].gent)
             {Console.WriteLine("No tenim taula per a un grup tan gran");continue;}
